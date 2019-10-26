@@ -6,7 +6,7 @@ import {
 } from '../components/actions/smurfs';
 
 const initialState = {
-	smurfs: [],
+	smurfs: null,
 	getSmurfs: null,
 	isLoading: false,
 	error: null
@@ -24,7 +24,7 @@ export function reducer(state = initialState, action) {
 			console.log(action);
 			return {
 				...state,
-				getSmurfs: action.payload,
+				smurfs: action.payload,
 				isLoading: false
 			};
 		case FETCH_SMURFS_ERROR:
@@ -37,7 +37,7 @@ export function reducer(state = initialState, action) {
 		case ADD_SMURFS:
 			return {
 				...state,
-				smurfs: state.smurfs.smurfs.concat(state.smurfs.getSmurfs),
+				smurfs: state.smurfs.concat(state.getSmurfs),
 				isLoading: false
 			};
 		default:
