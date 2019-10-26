@@ -12,6 +12,13 @@
 
 1. What is the difference between Application state and Component state? When would be a good time to use one over the other?
 
+- application state is the state among the entire application and holds the all state being used.
+- component state is sort of a one of state that is only held for that specific component and is not needed for any other component.
+
 1. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 
+- redux-thunk gives us access to async and functions to our dispatch in our action creator.
+
 1. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+- so far i have not decided, but i guess it would be redux... it is more work.. but it helps keep things more cleaner.
