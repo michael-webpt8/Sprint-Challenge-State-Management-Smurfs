@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
 function SmurfForm() {
 	const [name, setName] = useState('');
@@ -54,4 +55,4 @@ function SmurfForm() {
 		</>
 	);
 }
-export default SmurfForm;
+export default connect()(SmurfForm);
