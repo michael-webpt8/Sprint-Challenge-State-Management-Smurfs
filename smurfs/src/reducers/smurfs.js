@@ -1,3 +1,9 @@
+import {
+	FETCH_SMURFS_START,
+	FETCH_SMURFS_SUCCESS,
+	FETCH_SMURFS_ERROR
+} from '../components/actions/smurfs';
+
 const initialState = [
 	{
 		name: 'Brainey',
