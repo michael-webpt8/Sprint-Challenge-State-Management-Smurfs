@@ -4,17 +4,38 @@ import {
 	FETCH_SMURFS_ERROR
 } from '../components/actions/smurfs';
 
-const initialState = [
-	{
-		name: 'Brainey',
-		age: 200,
-		height: '5cm',
-		id: 0
-	}
-];
+const initialState = {
+	smurfs: [],
+	getSmurfs: null,
+	isLoading: false,
+	error: null
+};
 
 export function reducer(state = initialState, action) {
 	switch (action.type) {
+		case FETCH_SMURFS_START:
+			return {
+				...state,
+				isLoading: true
+			};
+		case FETCH_SMURFS_SUCCESS:
+			return {
+				...state,
+				getSmurfs: action.payload,
+				isLoading: false
+			};
+		case FETCH_SMURFS_ERROR:
+			return {
+				...state,
+				error: action.payload,
+				isLoading: false
+			};
+		case ADD_SMURFS:
+			return {
+				...state,
+				smurfs: [...smurfs, ...getSmurfs],
+				isLoading: false
+			};
 		default:
 			return state;
 	}
