@@ -25,7 +25,7 @@ function App(props) {
         <h2>Loading...</h2>
       ) : (
         <div>
-          <SmurfDisplay smurfs={props.smurfs} />
+          <SmurfDisplay />
         </div>
       )}
     </div>
