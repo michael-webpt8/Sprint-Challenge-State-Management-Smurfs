@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import SmurfDisplay from './SmurfDisplay';
 
 import { fetchSmurfs } from '../actions/smurfs';
+import CreateSmurfs from './CreateSmurf';
 
 function App(props) {
   const { fetchSmurfs } = props;
@@ -17,12 +18,15 @@ function App(props) {
     <div className='App'>
       <h1>SMURFS! 2.0 W/ Redux</h1>
       <div>Welcome to your state management version of Smurfs!</div>
-      <SmurfForm />
+      {/* <SmurfForm /> */}
+      <CreateSmurfs />
       {props.error && <p>Error: {props.error}</p>}
       {props.isLoading ? (
         <h2>Loading...</h2>
       ) : (
-        <SmurfDisplay smurfs={props.smurfs} />
+        <div>
+          <SmurfDisplay smurfs={props.smurfs} />
+        </div>
       )}
     </div>
   );
