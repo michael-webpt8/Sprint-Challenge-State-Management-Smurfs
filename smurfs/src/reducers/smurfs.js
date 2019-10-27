@@ -47,12 +47,6 @@ export function reducer(state = initialState, action) {
         ...state,
         isLoading: true
       };
-    // case FETCH_SMURFS_SUCCESS:
-    //   return {
-    //     ...state,
-    //     smurfs: action.payload,
-    //     isLoading: false
-    //   };
     case FETCH_SMURFS:
       return {
         ...state,
