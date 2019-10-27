@@ -5,7 +5,6 @@ export const FETCH_SMURFS_START = 'FETCH_SMURFS_START';
 export const ADD_SMURF = 'ADD_SMURF';
 
 export const ADD_SMURFS_START = 'ADD_SMURFS_START';
-export const ADD_SMURFS_ADD = 'ADD_SMURFS_ADD';
 
 const apiUrl = `http://localhost:3333/smurfs`;
 
@@ -32,7 +31,7 @@ export function fetchSmurfs() {
 
 export const smurfAddSucces = data => {
   return {
-    type: ADD_SMURFS_ADD,
+    type: ADD_SMURF,
     payload: {
       id: data.id,
       name: data.name,
