@@ -2,7 +2,7 @@ import {
   FETCH_SMURFS_START,
   FETCH_SMURFS,
   ADD_SMURFS_START,
-  ADD_SMURFS_ADD
+  ADD_SMURF
 } from '../actions/smurfs';
 
 const initialState = {
@@ -20,7 +20,7 @@ export function reducer(state = initialState, action) {
         ...state,
         isLoading: true
       };
-    case ADD_SMURFS_ADD:
+    case ADD_SMURF:
       return {
         ...state,
         smurfs: [...state, action.payload],
@@ -38,7 +38,6 @@ export function reducer(state = initialState, action) {
         isLoading: false,
         smurfs: action.smurfs
       };
-
     default:
       return state;
   }
