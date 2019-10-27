@@ -1,23 +1,30 @@
 import React from 'react';
+import Smurfs from './Smurfs';
+import { connect } from 'react-redux';
 
-function SmurfDisplay(props) {
-  const { smurfs } = props;
+function SmurfDisplay({ smurfs }) {
   console.log('loading', smurfs);
-  if (!props.smurfs) {
-    return <h2>Loading...</h2>;
+  if (!smurfs.length) {
+    return <h2>No Post...</h2>;
   }
   return (
     <>
       <div>
         {smurfs.map(smurf => (
-          <div key={Date.now()}>
-            <h2>{smurf.name}</h2>
-            <p>{smurf.age}</p>
-            <p>{smurf.height}</p>
-          </div>
+          <Smurfs smurf={smurf} key={smurf.id} />
         ))}
       </div>
     </>
   );
 }
-export default SmurfDisplay;
+
+const mapStateToProps = state => {
+  return {
+    smurfs: state.smurfs
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  {}
+)(SmurfDisplay);
