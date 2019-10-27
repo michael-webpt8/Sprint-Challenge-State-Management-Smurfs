@@ -32,6 +32,17 @@ export function fetchSmurfs() {
   };
 }
 
+export const smurfAddSucces = data => {
+  return {
+    type: ADD_SMURFS_ADD,
+    payload: {
+      name: data.name,
+      height: data.height,
+      age: data.age
+    }
+  };
+};
+
 export function addSmurf({ name, height, age }) {
   return dispatch => {
     return axios
@@ -44,14 +55,3 @@ export function addSmurf({ name, height, age }) {
       });
   };
 }
-
-export const smurfAddSucces = data => {
-  return {
-    type: ADD_SMURFS_ADD,
-    payload: {
-      name: data.name,
-      height: data.height,
-      age: data.age
-    }
-  };
-};
