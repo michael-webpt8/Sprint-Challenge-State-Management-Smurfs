@@ -1,6 +1,5 @@
 import {
   FETCH_SMURFS_START,
-  FETCH_SMURFS_SUCCESS,
   FETCH_SMURFS,
   FETCH_SMURFS_ERROR,
   ADD_SMURFS_START,
@@ -27,7 +26,7 @@ export function reducer(state = initialState, action) {
     case ADD_SMURFS_ADD:
       return {
         ...state,
-        smurfs: state.smurfs.concat({ smurf: action.payload }),
+        smurfs: [...state, action.payload],
         isLoading: false
       };
     case ADD_SMURFS_SUCCESS:
