@@ -1,11 +1,8 @@
 import {
   FETCH_SMURFS_START,
   FETCH_SMURFS,
-  FETCH_SMURFS_ERROR,
   ADD_SMURFS_START,
-  ADD_SMURFS_SUCCESS,
-  ADD_SMURFS_ADD,
-  ADD_SMURFS_ERROR
+  ADD_SMURFS_ADD
 } from '../actions/smurfs';
 
 const initialState = {
@@ -29,18 +26,7 @@ export function reducer(state = initialState, action) {
         smurfs: [...state, action.payload],
         isLoading: false
       };
-    case ADD_SMURFS_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-        smurfs: action.payload
-      };
-    case ADD_SMURFS_ERROR:
-      return {
-        ...state,
-        isLoading: false,
-        error: action.payload
-      };
+
     case FETCH_SMURFS_START:
       return {
         ...state,
@@ -51,12 +37,6 @@ export function reducer(state = initialState, action) {
         ...state,
         isLoading: false,
         smurfs: action.smurfs
-      };
-    case FETCH_SMURFS_ERROR:
-      return {
-        ...state,
-        error: action.payload,
-        isLoading: false
       };
 
     default:
