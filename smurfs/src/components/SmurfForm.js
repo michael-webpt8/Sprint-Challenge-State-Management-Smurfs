@@ -18,7 +18,7 @@ function SmurfForm(props) {
   };
 
   const handleSubmit = e => {
-    e.preventDefault();
+    // e.preventDefault();
     props.onAddSmurf({ name, age, height });
 
     setName('');
