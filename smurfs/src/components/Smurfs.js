@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default ({ smurfs: { name, height, age } }) => {
+export default props => {
+  if (!props.smurf) {
+    return <h3>Loading...</h3>;
+  }
+  const { name, age, height } = props.smurf;
   return (
     <div>
       <h2>{name}</h2>
