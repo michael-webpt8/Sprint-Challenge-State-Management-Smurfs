@@ -41,10 +41,10 @@ export const smurfAddSucces = data => {
   };
 };
 
-export function addSmurf({ name, height, age }) {
+export function addSmurf({ name, age, height }) {
   return dispatch => {
     return axios
-      .post(`http://localhost:3333/smurfs`, { name, height, age })
+      .post(`http://localhost:3333/smurfs`, { name, age, height })
       .then(res => {
         dispatch(smurfAddSucces(res.data));
       })
