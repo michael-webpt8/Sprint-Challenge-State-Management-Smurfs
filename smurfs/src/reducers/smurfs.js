@@ -6,9 +6,9 @@ import {
 } from '../actions/smurfs';
 
 const initialState = {
-  smurfs: null,
+  smurfs: [],
   smurf: null,
-  //  getSmurfs: null,
+  getSmurfs: null,
   isLoading: false,
   error: null
 };
@@ -23,7 +23,7 @@ export function reducer(state = initialState, action) {
     case ADD_SMURF:
       return {
         ...state,
-        smurfs: [...state, action.payload],
+        smurfs: [...state.smurfs, action.payload],
         isLoading: false
       };
 
